@@ -6,9 +6,8 @@ var month            = now.getMonth();
 var currentYear      = now.getFullYear();
 var daysInMonthCount = new Date(currentYear, currentMonth, 0).getDate();
 
-// Getting the Name of the month for our header
-var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
-];
+var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 var currentMonthName = (monthNames[month]);
 
 // Getting the day of the week the month starts
@@ -26,7 +25,7 @@ for (i = 1; i <= daysInMonthCount; i++) {
   
   // Making a variable with the HTML code for all days in the month
   // I will insert the day in number to the span with class of number
-    var daysCalendarBlock = '<span class="day-block">'+
+    var dayCalendarBlock = '<span class="day-block">'+
                               '<span class="number">' + i + '</span>'+
                             '</span>';
     // Making a variable for the fist day day-block with the HTML code. 
@@ -43,8 +42,8 @@ for (i = 1; i <= daysInMonthCount; i++) {
       firstDayOfCalendar.insertAdjacentHTML('beforeend', firstDayofCalendarBlock);
     } else {
       // Appending the daysOfCalendar variable to the days of the month
-      var daysOfCalendar = document.getElementById('days-of-month');
-      daysOfCalendar.insertAdjacentHTML('beforeend', daysCalendarBlock);
+      var dayOfCalendar = document.getElementById('days-of-month');
+      dayOfCalendar.insertAdjacentHTML('beforeend', dayCalendarBlock);
     }
 };
 
