@@ -1,0 +1,118 @@
+$gray:                #cccccc;
+$gray-light:          white;
+$main-color:          black;
+$white:               #ffffff;
+$day-block-gutter:    0px;
+$day-number-size:     25px;
+$breakopoint-width:   960px;
+$breakpoint:          "(min-width:#{$breakopoint-width})" !default;
+$calendar-width:      100%;
+$day-block-width:     100%/7; 
+$calendar-span-class: calendar-span !default;
+$font-family:         'Work Sans';
+
+@mixin slugs() {
+    @for $i from 1 through 7 {
+        .#{$calendar-span-class}-#{$i} {
+            flex-basis: $day-block-width * $i;
+            display: flex;
+            background: transparent !important;
+            .day-block-inner {
+                $day-block-inner-basis: 100% / $i;
+                flex-basis: $day-block-inner-basis;
+            }
+        }
+    }
+}
+
+body {
+    font-family: $font-family, Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+h1 {
+    text-align: left;
+    color: $main-color;
+    font-family: $font-family;
+    font-weight: 400;
+}
+.calendar {
+    width: 95%;
+    margin: 0 auto;
+    .days-of-week, .days-of-month {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        .day-block {
+            flex-basis: 100%;
+            text-align: center;
+            margin-bottom: $day-block-gutter;
+        }
+    }
+    .days-of-week {
+        display: none;
+        .day-block {
+            height: 10px;
+            color: $gray;
+            text-align: left;
+            font-size: .8em;
+            letter-spacing: .1em;
+            line-height: 0px;
+        }
+    }
+    .days-of-month {
+        .day-block, .day-block-inner {
+            background: none;
+            display: flex;
+            min-height: $day-number-size *5;
+            flex-basis: 100%;
+            outline: solid !important;
+            outline-style: inset !important;
+            outline-width: 1px !important;
+            outline-color: aqua !important;
+            .number {
+                color: $gray;
+                display: block;
+                height: 100%;
+                width: $day-number-size * 2;
+                font-size: 1em;
+                line-height: $day-number-size * 2;
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    @media #{$breakpoint} {
+        width: $calendar-width;
+        .days-of-week, .days-of-month {
+            display: flex;
+            .day-block, .day-block-inner {
+                justify-content: flex-end;
+                flex-basis: $day-block-width;
+                margin-bottom: 0;
+                .number {
+                    font-size: .8em;
+                    margin: $day-block-gutter;
+                    width: $day-number-size;
+                    height: $day-number-size;
+                    line-height: $day-number-size;
+                }
+            }
+            
+            @include slugs;
+        }
+        .days-of-month {
+            .day-block, .day-block-inner {
+                outline: solid !important;
+                outline-style: inset !important;
+                outline-width: 1px !important;
+                outline-color: aqua !important;
+                &:nth-of-type(even) {
+                    background: none;
+                }
+            }
+        }
+    }
+}
