@@ -30,7 +30,6 @@ body {
 
 /* line 41, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
 .week-sum {
-  height: calc(100% * (1/7) + 1px);
   margin-bottom: 1px;
   background-color: #fafafa;
   display: flex;
@@ -86,6 +85,8 @@ body {
 
 /* line 97, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
 .day-header {
+  position: relative;
+  top: 15px;
   font-family: "Work Sans";
   font-size: 12px;
   color: #8c8c8c;
@@ -93,25 +94,26 @@ body {
   display: block;
   text-align: center; }
 
-/* line 106, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+/* line 108, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
 .calendar-header {
   width: 100%;
-  height: 60px;
+  height: 40px;
   text-align: left;
   color: #000000;
   font-family: "Work Sans";
   font-weight: 400;
   font-size: 24px;
   margin: none !important;
-  padding: none !important; }
+  padding-left: 30px;
+  padding-top: 20px; }
 
-/* line 118, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+/* line 121, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
 .days-of-month {
   background-color: #e6e6e6;
   padding-left: 1px;
   height: calc(100% - 96px); }
 
-/* line 124, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+/* line 127, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
 .calendar {
   order: 1;
   position: relative;
@@ -124,13 +126,13 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   overflow: hidden; }
-  /* line 136, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+  /* line 139, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
   .calendar .non-month-day {
     background-color: #fafafa !important; }
-  /* line 140, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+  /* line 143, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
   .calendar .day-block {
-    width: calc(100% * (1/6) - 1px);
-    height: calc(100% * (1/7) - 1px);
+    width: calc(100% * (1/7) - 1px);
+    height: calc(100% * (1/6) - 1px);
     margin-bottom: 1px;
     display: flex;
     flex-grow: 1;
@@ -141,7 +143,7 @@ body {
     text-align: left;
     letter-spacing: .1em;
     margin-right: 1px; }
-    /* line 153, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+    /* line 156, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
     .calendar .day-block .number {
       font-size: 11px;
       color: #c8c8c8;
@@ -151,16 +153,16 @@ body {
       right: 4px;
       text-align: right;
       margin-bottom: 10px; }
-    /* line 163, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+    /* line 166, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
     .calendar .day-block .target {
       padding-top: px;
       padding-left: 2px;
       padding-right: 2px;
       margin-top: 0px; }
-    /* line 170, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+    /* line 173, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
     .calendar .day-block .target-desc {
       color: #c8c8c8;
-      width: 50px;
+      width: 60%;
       height: 15px;
       padding-top: -6px;
       padding-left: 2px;
@@ -172,7 +174,7 @@ body {
       overflow: hidden;
       white-space: nowrap;
       text-align: left; }
-    /* line 187, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+    /* line 190, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
     .calendar .day-block .target-val {
       height: 15px;
       padding-top: -6px;
@@ -182,18 +184,24 @@ body {
       font-weight: 600;
       float: right;
       text-align: right; }
-  /* line 200, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+    /* line 201, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+    .calendar .day-block i {
+      font-size: 10px;
+      margin-right: 1px;
+      position: relative;
+      top: 0px; }
+  /* line 209, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
   .calendar .day-block:hover {
     background-color: #fafafa; }
-  /* line 203, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+  /* line 212, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
   .calendar .day-block-no-right {
     border-right: 0; }
 
-/* line 208, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+/* line 217, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
 .pos {
   color: green; }
 
-/* line 211, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
+/* line 220, /Users/gravishm/Documents/GitHub/BudgetCal/css/styles.scss */
 .neg {
   color: red; }
 

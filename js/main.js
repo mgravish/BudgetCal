@@ -39,7 +39,9 @@ function buildCalendar() {
 function clickHandler(a) {
     var target = a;
     var amt = Math.round((Math.random()*1000*(.5-Math.random())))/10;
-    var $newDiv = $('<div class="target"><div class="target-desc">test</div><div id="val" class="target-val">$'+amt+'</div></div>');
+    var desc = 'Transaction';
+    var icon = '<i class="material-icons">shopping_cart</i>';
+    var $newDiv = $('<div class="target"><div class="target-desc">'+icon+desc+'</div><div id="val" class="target-val">$'+amt+'</div></div>');
     var val = $newDiv.find('#val')[0];
     if( amt > 0) { $(val).addClass('pos'); }
     else { $(val).addClass('neg'); }
