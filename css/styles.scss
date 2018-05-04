@@ -139,7 +139,7 @@ body {
     
     .day-block {
         width: calc(100% * (1/6) - 1px);
-        height: calc(100% * (1/7) + 1px);
+        height: calc(100% * (1/7) - 1px);
         margin-bottom: 1px;
         display: flex;
         flex-grow: 1;
@@ -150,30 +150,30 @@ body {
         text-align: left;
         letter-spacing: .1em;
         margin-right: 1px;
-        padding-top: 25px;
         .number {
             font-size: 11px;
             color: $gray3;
             float:right;
             position: relative;
-            top:-15px;
+            top:7px;
             right:4px;
             text-align: right;
+            margin-bottom: 10px;
         }
         .target {
             //outline: 1px solid blue;
-            //display:block;
-            //flex: none;
+            padding-top: px;
             padding-left:2px;
             padding-right: 2px;
-            margin-bottom: 2px;
-        }
+            margin-top:0px;
+        } 
         .target-desc {
             //outline: 1px solid red;
             color: $gray3;
             width: 50px;
-            height: 6px;
-            padding-top: 6px;
+            height: 15px;
+            padding-top: -6px;
+            padding-left: 2px;
             font-size: 12px;
             color:$black;
             letter-spacing: 0px;
@@ -186,12 +186,12 @@ body {
         }
         .target-val {
             //outline: 1px solid green;
-            height: 6px;
-            padding-top: 6px;
+            height: 15px;
+            padding-top: -6px;
+            padding-right: 2px;
             font-size:12px;
             letter-spacing: 0px;
             font-weight: 600;
-            color: red;
             float:right;
             text-align: right;
         }
@@ -203,4 +203,11 @@ body {
     .day-block-no-right {
         border-right: 0;
     }
+}
+
+.pos {
+    color: green;
+}
+.neg {
+    color: red;
 }

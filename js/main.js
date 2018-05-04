@@ -18,14 +18,13 @@ header.innerHTML = header.innerHTML + currentMonthName + " " + currentYear;
 var acct = $('.accounts')[0];
 $(acct).on('click',function() {
     var target = $('#14')[0];
-    $(target).append('<div class="target"><div class="target-desc">test</div><div class="target-val">$23.00</div></div>');
-    console.log('clicked');
+    
 });
 
 buildCalendar();
 function buildCalendar() {
     for (i = 1; i <= 42; i++) {
-        var dayCalendarBlock = '<div class="day-block" id="'+i+'"><span class="number">'+(i-firstDay)+'</span></div>';
+        var dayCalendarBlock = '<div class="day-block" id="'+i+'" onclick="clickHandler(this);"><span class="number">'+(i-firstDay)+'</span></div>';
         var firstDayofCalendarBlock = '<span class="non-month-day day-block"></span>';
         if ( i <= firstDay || i > (firstDay+lastDay)) {
           var firstDayOfCalendar = document.getElementById('days-of-month');
@@ -35,4 +34,14 @@ function buildCalendar() {
           dayOfCalendar.insertAdjacentHTML('beforeend', dayCalendarBlock);
         }
     }
+}
+
+function clickHandler(a) {
+    var target = a;
+    var amt = Math.round((Math.random()*1000*(.5-Math.random())))/10;
+    var $newDiv = $('<div class="target"><div class="target-desc">test</div><div id="val" class="target-val">$'+amt+'</div></div>');
+    var val = $newDiv.find('#val')[0];
+    if( amt > 0) { $(val).addClass('pos'); }
+    else { $(val).addClass('neg'); }
+    $newDiv.appendTo(target);
 }
